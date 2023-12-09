@@ -13,7 +13,7 @@ export default function slider() {
   return (
     <div className="relative bg-gray-500 z-10">
       <div className="text-center py-10">
-        <h2>Buildings</h2>
+        <h2 className="text-black">Buildings</h2>
       </div>
       <Swiper
         slidesPerView={3}
@@ -39,7 +39,7 @@ export default function slider() {
               <div>
                 <Image src={FOS} quality={100} alt="{d.name}"/>
               </div>
-              <div className="py-2 text-center"><p>{d.name}</p></div>
+              <div className="py-2 text-center text-black"><p>{d.name}</p></div>
             </div>
           </SwiperSlide>
         ))}
