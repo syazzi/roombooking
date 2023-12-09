@@ -2,26 +2,133 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+#app{
+  height: 100vh;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  position: relative;
+  z-index: 0;
+  @apply text-gray-500;
+}
+
+
+.homepage {
+  background-image: url('./components/homepage.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+nav {
+  position: relative;
+  z-index: 2;
+  @apply
+    bg-transparent
+    flex items-center gap-5
+    mx-auto justify-between
+    max-w-6xl;
+}
+
+ nav span {
+  @apply text-primary font-bold no-underline;
+}
+nav a {
+  @apply
+  text-white no-underline font-bold;
+}
+
+nav a:hover {
+  @apply text-secondary;
+}
+.homepage{
+  height: 100svh;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.homepage::after{
+  content: '';
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 50%;
+  z-index: 0;
+}
+
+.homepage-caption {
+  position: relative;
+  z-index: 3;
+  @apply
+  text-white pt-80 pb-20 ps-20
+}
+
+.homepage-link{
+  @apply
+  text-white no-underline bg-primary rounded-lg p-2;
+}
+
+.homepage-link:hover{
+  @apply
+  bg-secondary text-primary font-medium;
+}
+
+footer{
+  z-index: 3;
+  @apply
+  text-white bg-gray-800 relative p-2
+}
+
+.slider-bg{
+  position: relative;
+  
+}
+
+.slider-bg::after{
+  content: '';
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0%;
+  z-index: 0;
+}
+.login{
+  @apply
+  flex justify-center items-center h-screen bg-gray-800
+}
+.login-container{
+  @apply
+  flex relative justify-between bg-gray-500 
+  w-2/3 h-2/3 items-center 
+  rounded-3xl overflow-hidden p-10
+  ;
+}
+
+.login-image{
+  object-position: left top;
+  clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+  box-shadow: 10px 0px 7px 0px rgba(0,0,0,1);
+
+  @apply
+  absolute top-0 left-0 w-3/5 h-full z-0;
+}
+
+.login-caption{
+  transform: translateY(100%);
+}
+
+.timetable{
+  @apply
+  bg-gray-800;
+}
+.schedule{
+  @apply
+  bg-white border border-black h-full rounded-lg;
 }
