@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Carousel } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 

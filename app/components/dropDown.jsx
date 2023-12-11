@@ -15,7 +15,7 @@ export default function dropDown({ text }) {
   const [selected, setSelected] = useState(buildings[0]);
   return (
     <div className="flex col-span-2 mt-1">
-      <div className="pt-1 pe-1">{text}:</div>
+      <div className="pt-1 pe-1 text-black">{text}:</div>
       <div className="w-auto flex-1">
         <Listbox value={selected} onChange={setSelected}>
           <div className="relative">

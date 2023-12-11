@@ -29,19 +29,19 @@ export default function Timetable() {
                   </div>
                 </div>
                 <div className="pt-2">
-                  <p className="text-center">7:50 - 9:40</p>
+                  <p className="text-center text-black">7:50 - 9:40</p>
                 </div>
                 <div className="pt-2">
-                  <p className="text-center">7:50 - 11:40</p>
+                  <p className="text-center text-black">7:50 - 11:40</p>
                 </div>
                 <div className="pt-2">
-                  <p className="text-center">12:50 - 13:40</p>
+                  <p className="text-center text-black">12:50 - 13:40</p>
                 </div>
                 <div className="pt-2">
-                  <p className="text-center">14:10 - 16:00</p>
+                  <p className="text-center text-black">14:10 - 16:00</p>
                 </div>
                 <div className="pt-2">
-                  <p className="text-center">16:10 - 18:00</p>
+                  <p className="text-center text-black">16:10 - 18:00</p>
                 </div>
               </div>
               <ScheduleGrid day={"MONDAY"} date={"DATE"} />
