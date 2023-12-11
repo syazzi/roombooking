@@ -10,7 +10,7 @@ const Login = () => {
             <Image src={loginImage} alt="UBD Mosque" quality={100} fill={true} style={{ objectFit: 'cover', objectPosition: '-115px' }}/>
         </div>
         <div></div>
-        <div className="pe-16 pt-24 relative z-10 h-full">
+        <div className="pe-16 pt-24 relative z-10 h-full text-black">
           <h1 className="text-center pb-11">LOGIN</h1>
           <div className="pb-2">
             <input
