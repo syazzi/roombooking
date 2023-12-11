@@ -11,7 +11,7 @@ const Login = () => {
         </div>
         <div></div>
         <div className="pe-16 pt-24 relative z-10 h-full text-black">
-          <h1 className="text-center font-bold text-6xl pb-11">LOGIN</h1>
+          <h1 className="text-center text-5xl pb-11">LOGIN</h1>
           <div className="pb-2">
             <input
             className="py-1 ps-1 rounded-sm border-1 border-gray-600"

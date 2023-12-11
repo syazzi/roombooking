@@ -11,7 +11,7 @@ import FOS from "../images/FOS.jpg";
 export default function slider() {
   return (
     <div className="relative bg-gray-500 z-10">
-      <div className="text-center py-10 text-black">
+      <div className="text-center py-10 text-black text-5xl">
         <h2 className="">Buildings</h2>
       </div>
       <Swiper

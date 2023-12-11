@@ -75,12 +75,12 @@ nav a:hover {
   position: relative;
   z-index: 3;
   @apply
-  text-white pt-80 pb-20 ps-20;
+  text-white pt-80 pb-20 ps-20 text-5xl;
 }
 
 .homepage-link{
   @apply
-  text-white no-underline bg-primary rounded-lg p-2;
+  text-white no-underline bg-primary rounded-lg p-2 text-base;
 }
 
 .homepage-link:hover{
