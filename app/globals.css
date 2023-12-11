@@ -8,6 +8,8 @@
 
 #app{
   height: 100vh;
+  @apply
+  text-black;
 }
 
 body {
