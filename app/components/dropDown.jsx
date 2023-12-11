@@ -11,12 +11,12 @@ const buildings = [
   { name: "CLT" },
 ];
 
-export default function dropDown({text}) {
+export default function dropDown({ text }) {
   const [selected, setSelected] = useState(buildings[0]);
   return (
     <div className="flex col-span-2 mt-1">
-        <div className="pt-1 pe-1">{text}:</div>
-      <div className="w-auto">
+      <div className="pt-1 pe-1">{text}:</div>
+      <div className="w-auto flex-1">
         <Listbox value={selected} onChange={setSelected}>
           <div className="relative">
             <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">

@@ -2,18 +2,17 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Sliderlist from "./sliderList";
 import Image from "next/image";
 
 import "swiper/css";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import FOS from "./FOS.jpg";
+import FOS from "../images/FOS.jpg";
 
 export default function slider() {
   return (
     <div className="relative bg-gray-500 z-10">
-      <div className="text-center py-10">
-        <h2 className="text-black">Buildings</h2>
+      <div className="text-center py-10 text-black">
+        <h2 className="">Buildings</h2>
       </div>
       <Swiper
         slidesPerView={3}

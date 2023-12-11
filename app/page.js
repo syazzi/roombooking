@@ -1,7 +1,7 @@
 import Image from "next/image.js";
 import Link from "next/link.js";
 
-import HomepageImage from "./components/homepage.jpg";
+import HomepageImage from "./images/homepage.jpg";
 import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
 import Slider from "./components/slider";

@@ -19,9 +19,14 @@ export default function Timetable() {
               <Dropdown text={"ROOM"} />
             </div>
             <div className="grid grid-rows-9 h-screen w-full rounded-2xl items-center">
-              <div className="grid grid-cols-6 place-content-center">
-                <div className="border border-black flex p-2 gap-1">
-                <Dropdown text={"MONTH"}/>
+              <div className="grid grid-cols-6 place-content-center content-center place-items-center">
+                <div className="">
+                  <div>
+                    <Dropdown text={"MONTH"} />
+                  </div>
+                  <div className="pt-1">
+                    <Dropdown text={"WEEK"} />
+                  </div>
                 </div>
                 <div className="pt-2">
                   <p className="text-center">7:50 - 9:40</p>

@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root{
+  @apply
+  text-black;
+}
 
 #app{
   height: 100vh;
@@ -9,12 +13,17 @@
 body {
   position: relative;
   z-index: 0;
-  @apply text-gray-500;
+  @apply 
+  text-gray-500 ;
+}
+main {
+  @apply
+  bg-gray-800;
 }
 
 
 .homepage {
-  background-image: url('./components/homepage.jpg');
+  background-image: url('./images/homepage.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -64,7 +73,7 @@ nav a:hover {
   position: relative;
   z-index: 3;
   @apply
-  text-white pt-80 pb-20 ps-20
+  text-white pt-80 pb-20 ps-20;
 }
 
 .homepage-link{
@@ -101,7 +110,7 @@ footer{
 }
 .login{
   @apply
-  flex justify-center items-center h-screen bg-gray-800
+  flex justify-center items-center h-screen;
 }
 .login-container{
   @apply
@@ -124,10 +133,6 @@ footer{
   transform: translateY(100%);
 }
 
-.timetable{
-  @apply
-  bg-gray-800;
-}
 .schedule{
   @apply
   bg-white border border-black h-full rounded-lg;

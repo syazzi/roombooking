@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import loginImage from '../components/ubd-mosque.jpg'
+import loginImage from '../images/ubd-mosque.jpg'
 
 const Login = () => {
   return (
