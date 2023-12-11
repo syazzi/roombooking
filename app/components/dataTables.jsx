@@ -35,7 +35,14 @@ const TABLE_ROWS = [
 export default function dataTables() {
   return (
     <Card className="h-full flex-1 max-w-6xl overflow-y-auto overflow-x-visible">
+      <div className="text-black bg-blue-gray-50 text-center">
+        <p>
+          SYAZMIE MD ALI 20B2079
+
+        </p>
+        </div>
       <table className="w-full min-w-max table-auto text-left">
+        
         <thead>
           <tr>
             {TABLE_HEAD.map((head) => (

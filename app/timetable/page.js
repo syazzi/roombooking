@@ -21,7 +21,7 @@ export default function Timetable() {
             <div className="grid grid-rows-9 h-screen w-full rounded-2xl items-center">
               <div className="grid grid-cols-6 place-content-center content-center place-items-center">
                 <div className="">
-                  <div>
+                  <div className="relative z-10">
                     <Dropdown text={"MONTH"} />
                   </div>
                   <div className="pt-1">

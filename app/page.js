@@ -20,10 +20,9 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <Slider/>
+        <Slider />
       </main>
       <Footer />
     </>
   );
 }
-
