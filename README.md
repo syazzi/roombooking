@@ -34,3 +34,29 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+model Room {
+  id            String      @default(cuid()) @id
+  buildingId    String?
+  name          String
+  roomType      String?     @default("classroom")
+  published     Boolean     @default(false)
+  quota         Int?
+  createdAt     DateTime    @default(now()) @map(name: "created_at")
+  updatedAt     DateTime    @updatedAt @map(name: "updated_at")
+  building      Building?   @relation(fields: [buildingId], references: [id])
+  @@map("rooms")
+}
+
+model Building {
+  id            String     @default(cuid()) @id
+  name          String
+  address       String?
+  published     Boolean @default(false)
+  image         String?
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+  rooms         Room[]
+  @@map("buildings")
+}
