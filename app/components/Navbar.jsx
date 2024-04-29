@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import Logo from "../images/logo.png"
+import SignInButton from "./SignInButton"
 export default function Navbar() {
   return (
     <nav>
@@ -16,10 +17,7 @@ export default function Navbar() {
              }}>Room Booking</span>
         </div>
         <div className="flex gap-5 flex-1 justify-end">
-            <Link href='/'>Home</Link>
-            <Link href='/dashboard/customer'>Dashboard</Link>
-            <Link href='/timetable'>Timetable</Link>
-            <span className="text-white">Logout</span>
+            <SignInButton/>
         </div>
         
     </nav>

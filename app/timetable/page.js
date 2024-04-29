@@ -1,57 +1,30 @@
 import Navbar from "../components/Navbar";
-import ScheduleGrid from "../components/scheduleGrid";
 import Dropdown from "../components/dropDown";
 import Footer from "../components/footer";
+import prisma from "@/lib/prisma";
 
-export default function Timetable() {
+async function getBuildings() {
+  const buildings = await prisma.building.findMany({
+    where: { published: true },
+  });
+  return buildings;
+}
+
+async function getRooms() {
+  const rooms = await prisma.room.findMany({});
+  return rooms;
+}
+
+export default async function Timetable() {
+  const buildings = await getBuildings();
+  const rooms = await getRooms();
   return (
     <>
-      <main className="timetable">
+      <main className="timetable h-screen">
         <Navbar />
-
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center">
           <div className="bg-gray-400 max-w-6xl flex-1 p-3">
-            <div className=" flex justify-around gap-10 pb-3">
-              <Dropdown text={"BUILDINGS"} />
-
-              <Dropdown text={"FLOOR"} />
-
-              <Dropdown text={"ROOM"} />
-            </div>
-            <div className="grid grid-rows-9 h-screen w-full rounded-2xl items-center">
-              <div className="grid grid-cols-6 place-content-center content-center place-items-center">
-                <div className="">
-                  <div className="relative z-10">
-                    <Dropdown text={"MONTH"} />
-                  </div>
-                  <div className="pt-1">
-                    <Dropdown text={"WEEK"} />
-                  </div>
-                </div>
-                <div className="pt-2">
-                  <p className="text-center text-black">7:50 - 9:40</p>
-                </div>
-                <div className="pt-2">
-                  <p className="text-center text-black">7:50 - 11:40</p>
-                </div>
-                <div className="pt-2">
-                  <p className="text-center text-black">12:50 - 13:40</p>
-                </div>
-                <div className="pt-2">
-                  <p className="text-center text-black">14:10 - 16:00</p>
-                </div>
-                <div className="pt-2">
-                  <p className="text-center text-black">16:10 - 18:00</p>
-                </div>
-              </div>
-              <ScheduleGrid day={"MONDAY"} date={"DATE"} />
-              <ScheduleGrid day={"TUESDAY"} date={"DATE"} />
-              <ScheduleGrid day={"WEDNESDAY"} date={"DATE"} />
-              <ScheduleGrid day={"THURSDAY"} date={"DATE"} />
-              <ScheduleGrid day={"FRIDAY"} date={"DATE"} />
-              <ScheduleGrid day={"SATURDAY"} date={"DATE"} />
-              <ScheduleGrid day={"SUNDAY"} date={"DATE"} />
-            </div>
+            <Dropdown buildings={buildings} rooms={rooms} />
           </div>
         </div>
       </main>

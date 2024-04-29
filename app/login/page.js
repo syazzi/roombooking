@@ -1,43 +1,36 @@
-'use client'
 import Image from "next/image";
-import loginImage from '../images/ubd-mosque.jpg'
+import loginImage from "../images/ubd-mosque.jpg";
+import LoginForm from "../components/loginForm";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
-const Login = () => {
+const Login = async () => {
+  const session = await getServerSession();
+  console.log(session);
+  if(session){
+    redirect("/");
+  }
   return (
     <main className="login">
       <div className="login-container">
-        <div className="login-image">
-            <Image src={loginImage} alt="UBD Mosque" quality={100} fill={true} style={{ objectFit: 'cover', objectPosition: '-115px' }}/>
-        </div>
-        <div></div>
-        <div className="pe-16 pt-24 relative z-10 h-full text-black">
-          <h1 className="text-center text-5xl pb-11">LOGIN</h1>
-          <div className="pb-2">
-            <input
-            className="py-1 ps-1 rounded-sm border-1 border-gray-600"
-              type="email"
-              name="email"
-              id="Email"
-              placeholder="Email"
+        <div className="flex-1">
+          <div className="login-image">
+            <Image
+              src={loginImage}
+              alt="UBD Mosque"
+              quality={100}
+              fill={true}
+              sizes="50%"
+              priority={false}
+              style={{ objectFit: "cover"}}
             />
           </div>
-          <div className=" pt-2 pb-8">
-            <input
-            className="py-1 ps-1 rounded-sm border-1 border-gray-600"
-              type="password"
-              name="password"
-              id="Password"
-              placeholder="Password"
-            />
-          </div>
-          <div className=" flex justify-center items-center">
-            <button type="submit" className="w-2/3 "><p className="text-center bg-primary rounded-xl py-1">Login</p></button>
-          </div>
-          <div className="login-caption absolute bottom-0 right-0" >
-            *only for UBD
-          </div>
         </div>
-        
+        <div className="flex-1">
+          <h1 className="text-center">Login</h1>
+          <LoginForm />
+        </div>
+        <p className="absolute z-10 login-caption">*Only For UBD</p>
       </div>
     </main>
   );

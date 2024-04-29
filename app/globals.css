@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 :root{
-  @apply
-  text-black;
+  --input-bg-color: #fff;
+  --input-hover-bg-color: #fff;
+  --input-text-color: #000;
+  --month-input-font-size: 1.5rem;
+  --month-input-width: 277px;
+  --month-input-padding: 1rem;
 }
 
 #app{
@@ -15,8 +19,9 @@
 body {
   position: relative;
   z-index: 0;
+  background: green;
   @apply 
-  text-gray-500 ;
+  text-gray-500;
 }
 main {
   @apply
@@ -31,7 +36,7 @@ main {
   position: relative;
   top: 0;
   left: 0;
-  height: 100svh;
+  height: 50rem;
 }
 
 
@@ -110,30 +115,50 @@ footer{
 }
 .login{
   @apply
-  flex justify-center items-center h-screen;
+  flex justify-center items-center h-screen overflow-y-scroll;
 }
 .login-container{
+  height: 30rem;
   @apply
   flex relative justify-between bg-gray-500 
-  w-2/3 h-2/3 items-center 
+  w-2/3 items-center 
   rounded-3xl overflow-hidden p-10
   ;
 }
 
 .login-image{
+  width: 50%;
   object-position: left top;
   clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
   box-shadow: 10px 0px 7px 0px rgba(0,0,0,1);
 
   @apply
-  absolute top-0 left-0 w-3/5 h-full z-0;
+  absolute top-0 left-0 h-full z-0;
 }
 
 .login-caption{
-  transform: translateY(100%);
+  right: 0;
+  bottom: 0;
+  transform: translateX(-50%)
 }
 
 .schedule{
   @apply
-  bg-white border border-black h-full rounded-lg;
+  bg-white border border-black h-full rounded-lg p-3 text-xs hover:bg-gray-200 cursor-pointer;
 }
+.bookedSchedule{
+  @apply
+  bg-green-300 border border-black h-full rounded-lg p-3 text-xs hover:bg-gray-200 cursor-pointer;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.adminDashboard{
+  @apply
+  bg-gray-800;
+}
+
